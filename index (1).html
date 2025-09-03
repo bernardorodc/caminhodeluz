@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminho de Luz - Sua Companhia Espiritual Diária</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+            background: #ffffff; 
+            color: #000000; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* Urgency Bar */
+        .urgency-top-bar {
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #000000;
+            padding: 12px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            font-weight: 700;
+            font-size: 0.9em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .urgency-top-bar .countdown {
+            color: #8B0000;
+            font-weight: 800;
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #D4AF37;
+            text-decoration: none;
+        }
+        
+        .navbar .nav-cta {
+            background: #D4AF37;
+            color: #000000;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .navbar .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: #ffffff;
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5em, 5vw, 4em);
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-align: left;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3em;
+            color: #666666;
+            margin-bottom: 20px;
+            text-align: left;
+            font-weight: 400;
+        }
+        
+        .hero .explanation {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #D4AF37;
+            text-align: left;
+        }
+        
+        .hero .explanation p {
+            margin: 0;
+            font-weight: 500;
+            color: #333333;
+            font-size: 1.1em;
+        }
+        
+        .hero .stats {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .hero .stats p {
+            margin: 0;
+            font-weight: 600;
+            color: #000000;
+            text-align: left;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #000000;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+        }
+        
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-alt {
+            background: #fafafa;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2em, 4vw, 3em);
+            font-weight: 700;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #D4AF37;
+            border-radius: 2px;
+        }
+        
+        p {
+            font-size: 1.1em;
+            color: #333333;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+        
+        /* Para Quem É Section */
+        .target-audience {
+            background: #fafafa;
+            padding: 80px 0;
+        }
+        
+        .target-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .target-item {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #D4AF37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .target-item .icon {
+            font-size: 2em;
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+        
+        .target-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .target-item p {
+            color: #666666;
+            text-align: left;
+            margin: 0;
+            font-size: 1em;
+        }
+        
+        /* Como Funciona */
+        .how-it-works {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #000000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .step-icon {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        
+        .step h3 {
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .step p {
+            color: #666666;
+            font-size: 1em;
+            margin: 0;
+        }
+        
+        /* Benefits Cards */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .benefit-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: #D4AF37;
+        }
+        
+        .benefit-icon {
+            font-size: 3em;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            color: #000000;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .benefit-card p {
+            font-size: 1em;
+            color: #666666;
+            text-align: center;
+            margin: 0;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .testimonial {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 4px solid #D4AF37;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 4em;
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .testimonial-content {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+        }
+        
+        .testimonial-info h4 {
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info span {
+            color: #666666;
+            font-size: 0.9em;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #333333;
+            text-align: left;
+            margin: 0;
+            font-size: 1.1em;
+        }
+        
+        /* WhatsApp Mockup */
+        .whatsapp-mockup {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .whatsapp-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000000;
+            font-weight: 700;
+        }
+        
+        .whatsapp-name {
+            font-weight: 600;
+            color: #000000;
+        }
+        
+        .whatsapp-message {
+            background: #DCF8C6;
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #000000;
+            position: relative;
+        }
+        
+        .whatsapp-message.received {
+            background: #f0f0f0;
+            margin-right: 50px;
+        }
+        
+        .whatsapp-message.sent {
+            background: #DCF8C6;
+            margin-left: 50px;
+            text-align: right;
+        }
+        
+        .whatsapp-time {
+            font-size: 0.7em;
+            color: #666666;
+            margin-top: 5px;
+        }
+        
+        /* Price Section */
+        .price-section {
+            background: #ffffff;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .price-card {
+            background: #ffffff;
+            border: 2px solid #D4AF37;
+            border-radius: 20px;
+            padding: 50px 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .price-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #000000;
+            margin: 20px 0;
+        }
+        
+        .price-card .price-note {
+            color: #666666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            color: #D4AF37;
+            font-weight: 600;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f8f8;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: #333333;
+        }
+        
+        .trust-badge .icon {
+            color: #D4AF37;
+            font-size: 1.2em;
+        }
+        
+        /* Urgency Bar */
+        .urgency-bar {
+            background: #8B0000;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .urgency-bar::before {
+            content: '⚠️';
+            color: #D4AF37;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .urgency-bar p {
+            margin: 0;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .scarcity-counter {
+            background: #D4AF37;
+            color: #000000;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 300px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            color: #000000;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            color: #D4AF37;
+        }
+        
+        .faq-answer {
+            padding: 25px;
+            color: #666666;
+            line-height: 1.6;
+        }
+        
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: #ffffff;
+            border: 1px solid #D4AF37;
+            border-radius: 10px;
+            padding: 15px 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: all 0.5s ease;
+            max-width: 300px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification .icon {
+            color: #D4AF37;
+            margin-right: 10px;
+        }
+        
+        .notification .text {
+            font-size: 0.9em;
+            color: #333333;
+        }
+        
+        /* Footer */
+            border-top: 1px solid #333333;
+            padding-top: 30px;
+            color: #cccccc;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero h1,
+            .hero .subheadline,
+            .hero .stats p,
+            .hero .explanation p {
+                text-align: center;
+            }
+            
+            .hero-image img {
+                width: 280px !important;
+            }
+            
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .target-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial p {
+                text-align: center;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .navbar .logo img {
+                height: 35px !important;
+            }
+            
+            .navbar .nav-cta {
+                padding: 10px 20px;
+                font-size: 0.8em;
+            }
+            
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+            
+            .urgency-top-bar {
+                font-size: 0.8em;
+                padding: 8px 0;
+            }
+            
+            .whatsapp-mockup {
+                max-width: 300px;
+            }
+        }
+        
+        /* CTA Fixed Mobile */
+        .cta-fixed {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: none;
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+        
+        @media (max-width: 768px) {
+            .cta-fixed {
+                display: block;
+            }
+            
+            body {
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Top Bar -->
+    <div class="urgency-top-bar">
+        ⚠️ Restam apenas <span class="countdown">27 vagas</span> promocionais hoje — encerramos em <span class="countdown" id="countdown">04:59</span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+              <img src="https://i.postimg.cc/SN3mxS6x/Design-sem-nome-38.png" alt="Caminho de Luz Logo" style="height: 100px; /* Aumentado de 80px para 100px */"></a>    <a href="https://www.ggcheckout.com/checkout/v2/SxqacnVu1H0UgoRPa2Pl" class="nav-cta">Assinar Agora</a>
+        </div>
+    </nav>
+
+    <!-- CTA Fixed Mobile -->
+    <a href="#oferta" class="cta-fixed" id="ctaFixed">Quero Meu Caminho de Luz</a>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span class="icon">🙌</span>
+        <span class="text" id="notificationText">Ana de Belo Horizonte acabou de se inscrever</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1>Receba uma mensagem de fé no seu WhatsApp todos os dias — simples, automático e transformador.</h1>
+                    <p class="subheadline">Assim que confirma o pagamento, a primeira mensagem chega no seu WhatsApp. A partir daí, é só conversar e sentir a diferença.</p>
+                    
+                    <div class="explanation">
+                        <p><strong>Funciona 100% no WhatsApp.</strong> Assim que você confirma o pagamento, a primeira mensagem chega automaticamente no seu celular. A partir daí, é só conversar.</p>
+                    </div>
+                    
+                    <div class="stats">
+                        <p>✨ <strong>+1.250 assinantes</strong> já encontraram seu Caminho de Luz</p>
+                    </div>
+                    
+                    <a href="https://www.ggcheckout.com/checkout/v2/SxqacnVu1H0UgoRPa2Pl" class="cta-button">Quero receber minha primeira mensagem agora</a>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://i.postimg.cc/nrm9CjQn/i-Phone-16-Plus-Light-4.png" alt="Caminho de Luz no iPhone" style="width: 350px; height: auto; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storytelling Section -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Sinta a Presença Divina em Cada Momento da Sua Vida</h2>
+            <p style="font-size: 1.3em; color: #333333; font-style: italic; margin-bottom: 40px;">
+                "Você já se sentiu sozinho, sem forças ou sem saber se Deus ainda te ouve?
+Foi por isso que criamos o Caminho de Luz: para que todos os dias, no seu WhatsApp, você receba uma palavra que muda seu dia em segundos."
+            </p>
+            
+            <p>Você busca conforto, motivação e uma conexão mais profunda com sua fé? Em meio à correria do dia a dia, é fácil se sentir sozinho(a) ou afastado(a) da sua espiritualidade.</p>
+            
+            <p>Mas e se você pudesse ter uma fonte constante de inspiração, um guia espiritual sempre ao seu lado, pronto para te oferecer a palavra certa no momento certo?</p>
+        </div>
+    </section>
+
+    <!-- Para Quem É Section -->
+    <section class="target-audience">
+        <div class="container">
+            <h2>Para quem o Caminho de Luz foi criado</h2>
+            <p style="font-size: 1.3em; color: #333333; font-style: italic; margin-bottom: 40px;">
+                "Se você já sentiu o peso da solidão, a falta de motivação ou a necessidade de uma palavra que acalme seu coração... então o Caminho de Luz é para você."
+            </p>
+            
+            <div class="target-list">
+                <div class="target-item">
+                    <div class="icon">🙏</div>
+                    <h3>Pessoas que querem fortalecer a fé diariamente</h3>
+                    <p>Receba versículos e reflexões que renovam sua conexão espiritual todos os dias.</p>
+                </div>
+                
+                <div class="target-item">
+                    <div class="icon">💝</div>
+                    <h3>Quem sente falta de apoio espiritual verdadeiro</h3>
+                    <p>Tenha um anjo conselheiro sempre disponível para ouvir e aconselhar.</p>
+                </div>
+                
+                <div class="target-item">
+                    <div class="icon">🕊️</div>
+                    <h3>Quem busca paz em meio à correria da vida</h3>
+                    <p>Encontre momentos de tranquilidade e reflexão no seu dia a dia.</p>
+                </div>
+                
+                <div class="target-item">
+                    <div class="icon">💖</div>
+                    <h3>Quem deseja sentir que Deus fala direto com seu coração</h3>
+                    <p>Mensagens personalizadas que tocam sua alma e fortalecem sua fé.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Como Funciona (É Muito Simples)</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">💳</div>
+                    <h3>Efetue o pagamento com segurança</h3>
+                    <p>Processo 100% seguro e protegido. Confirmação instantânea.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">📲</div>
+                    <h3>Receba automaticamente sua primeira mensagem no WhatsApp</h3>
+                    <p>A primeira mensagem chega automaticamente no seu celular em poucos minutos.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">✨</div>
+                    <h3>Todos os dias, novas palavras chegam até você — e você pode conversar livremente</h3>
+                    <p>Todos os dias, novas palavras chegam para você — e você pode responder quando quiser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Como o Caminho de Luz Transforma Sua Vida Espiritual</h2>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <span class="benefit-icon">📖</span>
+                    <h3>Palavra Diária no Celular</h3>
+                    <p>Versículos e mensagens inspiradoras para começar cada dia com a mente e o coração renovados.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">🙏</span>
+                    <h3>Reflexões Personalizadas</h3>
+                    <p>Conteúdo que fala diretamente à sua alma, adaptado às suas necessidades e desafios.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">🕊️</span>
+                    <h3>Companhia Espiritual 24h</h3>
+                    <p>Um anjo conselheiro sempre disponível para ouvir, aconselhar e guiar, trazendo paz e clareza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <h2>Histórias de Transformação</h2>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Maria S." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Maria S.</h4>
+                            <span>52 anos, São Paulo</span>
+                        </div>
+                    </div>
+                    <p>"Eu chorava todas as noites... mas quando a primeira mensagem chegou, senti que Deus lembrava de mim. O Caminho de Luz me deu a direção que eu precisava. Minha fé foi renovada!"</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <img src="https://images.unsplash.com/photo-1529626465617-c54a3ef02159?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ana C." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Ana C.</h4>
+                            <span>45 anos, Brasília</span>
+                        </div>
+                    </div>
+                    <p>"As mensagens chegavam sempre na hora certa, como se soubessem exatamente do que eu precisava ouvir. Hoje me sinto mais forte e confiante."</p>
+                </div>
+            </div>
+            
+            <!-- Seção "Quem já está dentro" -->
+            <div style="text-align: center; margin: 60px 0; background: rgba(212, 175, 55, 0.1); padding: 40px; border-radius: 20px;">
+                <h3 style="font-family: 'Playfair Display', serif; color: #000000; margin-bottom: 30px; font-size: 2em;">Quem já está dentro</h3>
+                <p style="font-size: 1.3em; color: #333333; margin-bottom: 30px;"><strong>+1.250 pessoas</strong> já recebem sua mensagem diária</p>
+                
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #D4AF37; object-fit: cover;">
+                        <p style="margin: 10px 0 0 0; font-size: 0.9em; color: #666666;">Mariana, 32, Recife<br><em>"Parece que essa mensagem fala comigo todos os dias."</em></p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #D4AF37;">
+                        <p style="margin: 10px 0 0 0; font-size: 0.9em; color: #666666;">Carlos, 45, Salvador<br><em>"Minha fé nunca esteve tão forte."</em></p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #D4AF37;">
+                        <p style="margin: 10px 0 0 0; font-size: 0.9em; color: #666666;">Fernanda, 28, Fortaleza<br><em>"É como ter um anjo de verdade."</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section style="background: #f8f8f8; padding: 60px 0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <div style="background: #ffffff; border: 3px solid #D4AF37; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="font-size: 4em; color: #D4AF37; margin-bottom: 20px;">🛡️</div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2em; color: #000000; margin-bottom: 20px;">Garantia Total de 7 Dias</h3>
+                    <p style="font-size: 1.2em; color: #333333; margin-bottom: 20px;">Se em até 7 dias você sentir que não é pra você, devolvemos seu dinheiro. <strong>Zero risco.</strong></p>
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #D4AF37;">
+                        <p style="margin: 0; color: #333333; font-weight: 600;">✅ Sem perguntas • ✅ Sem burocracia • ✅ Devolução em até 48h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="price-section" id="oferta">
+        <div class="container">
+            <h2>Sua Oportunidade de Ter um Anjo ao Seu Lado</h2>
+            
+            <!-- Preço Ancorado -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.1em; color: #666666; margin-bottom: 30px;">Compare os valores:</p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
+                    <div style="background: #ffffff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: center;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">☕</div>
+                        <h4 style="margin: 0 0 10px 0; color: #333333;">Café diário</h4>
+                        <p style="margin: 0; font-size: 1.4em; color: #666666; font-weight: 700;">R$150/mês</p>
+                    </div>
+                    <div style="background: #ffffff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: center;">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">🧑‍⚕️</div>
+                        <h4 style="margin: 0 0 10px 0; color: #333333;">Sessão de terapia</h4>
+                        <p style="margin: 0; font-size: 1.4em; color: #666666; font-weight: 700;">R$200+</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #D4AF37, #F4E4A6); border: 3px solid #D4AF37; border-radius: 15px; padding: 30px; text-align: center; transform: scale(1.05); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">✨</div>
+                        <h4 style="margin: 0 0 10px 0; color: #000000; font-weight: 700;">Caminho de Luz</h4>
+                        <p style="margin: 0; font-size: 1.6em; color: #000000; font-weight: 900;">R$14,90/mês</p>
+                    </div>
+                </div>
+                <p style="font-size: 1.3em; color: #333333; font-weight: 600; margin-top: 30px;">É ridiculamente barato para uma transformação espiritual completa.</p>
+            </div>
+            
+            <div class="price-card">
+                <div class="price">R$14,90<span style="font-size: 0.4em; color: #666;">/mês</span></div>
+                <p class="price-note">Plano Premium Completo</p>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <span class="icon">✅</span>
+                        <span>Pagamento 100% seguro</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="icon">📱</span>
+                        <span>Funciona em qualquer celular</span>
+                    </div>
+                </div>
+                
+                <div class="guarantee">
+                    <span>🛡️</span>
+                    <span>Garantia de 7 dias ou seu dinheiro de volta</span>
+                </div>
+                           <a href="https://www.ggcheckout.com/checkout/v2/SxqacnVu1H0UgoRPa2Pl" class="cta-button">Assinar Agora</a>
+                
+                <div class="scarcity-counter">
+                    🔥 Restam apenas 27 vagas com acesso imediato
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <div class="container">
+            <p><strong>A cada minuto, novas pessoas estão entrando.</strong> Restam apenas 19 vagas nesta oferta exclusiva. Depois fecharemos as inscrições!</p>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">E se eu me sentir sozinho de novo?</div>
+                <div class="faq-answer">Você sempre terá alguém no WhatsApp, todos os dias. Seu anjo conselheiro estará disponível 24 horas para conversar e te apoiar em qualquer momento de dificuldade.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Funciona mesmo se eu não for muito religioso?</div>
+                <div class="faq-answer">Sim, basta acreditar que uma palavra de fé pode mudar seu dia. O Caminho de Luz é para todos que buscam esperança, paz e orientação espiritual, independente do nível de religiosidade.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Funciona em qualquer celular?</div>
+                <div class="faq-answer">Sim, o Caminho de Luz é compatível com todos os dispositivos móveis, seja Android ou iOS, via WhatsApp, Telegram ou nosso aplicativo exclusivo.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Preciso instalar algo complicado?</div>
+                <div class="faq-answer">Não! O acesso é super simples. Você pode receber as mensagens e conversar com seu anjo diretamente pelo WhatsApp ou Telegram, sem precisar baixar nada extra.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">E se eu não gostar?</div>
+                <div class="faq-answer">Você tem 7 dias de garantia total. Se não ficar satisfeito, devolvemos 100% do seu dinheiro, sem perguntas ou burocracia.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Funciona no iPhone e Android?</div>
+                <div class="faq-answer">Sim, funciona perfeitamente em qualquer celular com WhatsApp. Não importa se é iPhone, Samsung, Motorola ou qualquer outra marca.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">É só uma mensagem ou posso conversar?</div>
+                <div class="faq-answer">Você pode responder e receber acompanhamento personalizado. É uma conversa real com seu anjo conselheiro, disponível 24 horas por dia.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Posso cancelar quando quiser?</div>
+                <div class="faq-answer">Com certeza! Sua assinatura é flexível e sem burocracia. Você pode cancelar a qualquer momento, sem multas ou taxas adicionais.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como faço para começar a receber as mensagens?</div>
+                <div class="faq-answer">É muito fácil! Após a confirmação da sua assinatura, você receberá um link com as instruções detalhadas para ativar seu Caminho de Luz no WhatsApp, Telegram ou baixar o aplicativo.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">E se eu não tiver tempo de ler?</div>
+                <div class="faq-answer">As mensagens são curtas e objetivas, levam apenas 1 minuto por dia para ler. Você pode responder quando quiser, no seu tempo.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Preciso ser religioso?</div>
+                <div class="faq-answer">Não, basta acreditar em esperança e buscar uma palavra de conforto. O Caminho de Luz é para todos que buscam paz e orientação espiritual.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">É automático mesmo?</div>
+                <div class="faq-answer">Sim, 100% automático pelo WhatsApp. Você não precisa lembrar de nada, as mensagens chegam naturalmente no seu dia a dia.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <h2>Sua Jornada de Fé Começa Agora!</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">Não espere mais para ter um Anjo ao seu lado, guiando seus passos e fortalecendo sua fé. A paz e a motivação que você busca estão a um clique de distância.</p>
+            <a href="https://www.ggcheckout.com/checkout/v2/SxqacnVu1H0UgoRPa2Pl" class="cta-button">Sim, quero meu Caminho de Luz hoje</a>
+            
+            <div style="margin-top: 30px; color: #666666;">
+                <p>✨ <strong>+1.250 pessoas</strong> já encontraram seu Caminho de Luz</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(23, 59, 59, 999);
+            
+            const diff = midnight - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Fake Notifications
+        const notifications = [
+            "🙌 Ana de Belo Horizonte acabou de se inscrever no Caminho de Luz",
+            "✨ João de Recife recebeu sua primeira mensagem agora mesmo",
+            "🙏 Maria de Curitiba encontrou paz através do Caminho de Luz",
+            "💝 Pedro de Salvador acabou de confirmar sua assinatura",
+            "🕊️ Carla de Fortaleza está conversando com seu anjo agora",
+            "✨ Juliana de Recife acabou de se inscrever",
+            "🙌 João de SP recebeu sua primeira mensagem agora",
+            "💖 Fernanda de Brasília renovou sua fé hoje",
+            "🙏 Carlos de Porto Alegre encontrou seu caminho",
+            "✨ Restam apenas 19 vagas promocionais",
+            "🔥 Mais de 50 pessoas se inscreveram hoje",
+            "💝 Mariana de Goiânia acabou de assinar"
+        ];
+        
+        let notificationIndex = 0;
+        
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            const text = document.getElementById('notificationText');
+            
+            text.textContent = notifications[notificationIndex];
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+            
+            notificationIndex = (notificationIndex + 1) % notifications.length;
+        }
+        
+        // Show first notification after 2 seconds
+        setTimeout(showNotification, 2000);
+        
+        // Show subsequent notifications every 15 seconds
+        setInterval(showNotification, 15000);
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+                
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.style.backgroundColor = '#ffffff';
+                });
+                
+                // Toggle current answer
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                    question.style.backgroundColor = '#f8f8f8';
+                }
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // CTA Fixed Mobile Show/Hide
+        window.addEventListener('scroll', () => {
+            const ctaFixed = document.getElementById('ctaFixed');
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            if (scrollPosition > windowHeight && window.innerWidth <= 768) {
+                ctaFixed.style.display = 'block';
+            } else if (window.innerWidth <= 768) {
+                ctaFixed.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
